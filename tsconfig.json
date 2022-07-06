@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "strictPropertyInitialization": false,  //resolver problema das models sem construtor, pois não solicita inicialização dos atributos.
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
