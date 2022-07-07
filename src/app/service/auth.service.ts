@@ -13,14 +13,12 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{ // Feito na aula gravada! Entrar ou cadastrar? Usuario ou usuarioLogin? devo manter ou posso excluir?
+  entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{ 
     return this.http.post<UsuarioLogin>('http://localhost:8080/usuario/logar',usuarioLogin)
   }
 
-  cadastrar(usuario: Usuario): Observable<Usuario>{ // Feito na aula ao vivo com Prof Geandro!
+  cadastrar(usuario: Usuario): Observable<Usuario>{ 
     return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar',usuario)
   }
-
-
 
 }

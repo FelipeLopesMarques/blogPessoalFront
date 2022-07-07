@@ -32,7 +32,7 @@ export class CadastrarComponent implements OnInit {
   }
 
   cadastrar(){
-    this.usuario.tipo = this.tipoUsuario // No video essa parte foi adicionada!
+    this.usuario.tipo = this.tipoUsuario
 
     if(this.usuario.senha != this.confirmSenha){
       alert("Senhas diferentes!")
