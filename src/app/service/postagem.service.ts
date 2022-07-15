@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -19,8 +20,20 @@ export class PostagemService {
     return this.http.get<Postagem[]>('http://localhost:8080/postagens', this.token)
   }
 
+  getByIdPostagem(id: number): Observable<Postagem>{
+    return this.http.get<Postagem>(`https://localhost:8080/postagens/${id}`, this.token)
+  }
+
   postPostagem(postagem: Postagem) : Observable<Postagem>{
     return this.http.post<Postagem>('https://localhost:8080/postagens', postagem, this.token)
+  }
+
+  putPostagem(postagem: Postagem): Observable<Postagem>{
+    return this.http.put<Postagem>('http://localhost:8080/postagen', postagem, this.token)
+  }
+
+  deletePostagem(id: number){
+    return this.http.delete(`https://localhost:8080/postagens/${id}`, this.token)
   }
 
 
